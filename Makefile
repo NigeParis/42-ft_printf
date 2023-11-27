@@ -11,6 +11,7 @@ CCOPTIONS=-c
 SRC_OBJ=$(addprefix $(OBJ_DIR), $(OBJ))
 LIBFT_SRC=$(addprefix $(LIBFT_DIR), $(LIBFT))
 LIBFT_OBJ=$(addprefix $(OBJ_DIR), $(LIBFT:.c=.o))
+LIBFT_HEAD=$(addprefix $(LIBFT_DIR), $(LIBFT_HEADER))
 MAIN_SRC=$(addprefix $(SRC_DIR), $(MAIN))
 MAIN_OBJ=$(addprefix $(OBJ_DIR), $(MAIN:.c=.o))
 CC=cc
@@ -28,6 +29,7 @@ MAIN=test_printf.c
 
 
 HEADER=libftprintf.h
+LIBFT_HEADER=libft.h
 ###############################################################################
 ## RULES
 
@@ -36,15 +38,15 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "\nCreating Libft.a FILE .......\n"
-#	ar -rcs $(NAME) $(OBJ)
+	ar -rcs $(NAME) $(OBJ)
 	@echo "\nlinking FILES .......\n"
 	cc $(OBJ) $(LIBFT_OBJ) $(MAIN_OBJ) -o $(EXEC)
 
 $(OBJ):
 	@echo "\nCOMPILE all c files to .o FILES .......\n"
-	$(CC) $(CFLAGS) $(CCOPTIONS) $(LIBFT_SRC) -I../libft/libft.h
-	$(CC) $(CFLAGS) $(CCOPTIONS) $(SRCS) -I.$(HEAD)
-	$(CC) $(CFLAGS) $(CCOPTIONS) $(MAIN_SRC) -I.$(HEAD) -o $(MAIN_OBJ)
+	$(CC) $(CFLAGS) $(CCOPTIONS) $(LIBFT_SRC) -I$(LIBFT_HEAD)
+	$(CC) $(CFLAGS) $(CCOPTIONS) $(SRCS) -I$(HEAD) -I$(LIBFT_HEAD)
+	$(CC) $(CFLAGS) $(CCOPTIONS) $(MAIN_SRC) -o $(MAIN_OBJ)
 	
 clean:
 	rm -f $(SRC_OBJ) $(LIBFT_OBJ) $(MAIN_OBJ)

@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 15:52:51 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/22 12:19:46 by nrobinso         ###   ########.fr       */
+/*   Created: 2023/11/19 15:56:26 by nrobinso          #+#    #+#             */
+/*   Updated: 2023/11/19 15:56:32 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/**
+*    #include <ctype.h>
+*
+*    isalpha  -  int isalpha(int c);
+*
+*	 RETURN VALUE
+*       The  values returned are nonzero 
+* 		if the character c falls into the tested class,
+*       and zero if not.
+**/
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_isalpha(int c)
 {
-	write(fd, &c, 1);
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
 }

@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 15:52:51 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/22 12:19:46 by nrobinso         ###   ########.fr       */
+/*   Created: 2023/11/24 10:16:35 by nrobinso          #+#    #+#             */
+/*   Updated: 2023/11/24 23:28:48 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/**
+* ft_lstlast
+*
+* t_list *ft_lstlast(t_list *lst);
+*
+* Description: Returns the last node of the list.
+*
+* Parameters: lst: The beginning of the list.
+*
+* Return value: Last node of the list
+*
+**/
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+t_list	*ft_lstlast(t_list *lst)
 {
-	write(fd, &c, 1);
+	if (lst == NULL)
+		return (0);
+	while (lst -> next)
+	{
+		lst = lst -> next;
+	}
+	return (lst);
 }
