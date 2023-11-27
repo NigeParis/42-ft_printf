@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:45:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/27 14:18:08 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/11/27 17:49:20 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 
 int main (void)
 {
+	int d = 9;
 
-	ft_putchar_fd('X', 1);
+	
+	ft_printf("\nlist %d new list\n", d);
+
+
 
 	return (0);
 }

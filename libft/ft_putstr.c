@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 07:43:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/27 17:15:58 by nrobinso         ###   ########.fr       */
+/*   Created: 2023/11/19 16:04:38 by nrobinso          #+#    #+#             */
+/*   Updated: 2023/11/22 12:29:19 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIBFTPRINTF_H
-# define FT_LIBFTPRINTF_H
+#include "libft.h"
 
-# include "../libft/libft.h"
-# include <stdarg.h>
-# include <stdio.h>
-
-int	ft_printf(const char *, ...);
-
-#endif
+void	ft_putstr(char *str)
+{
+	if (!str)
+		return ;
+	while (*str)
+	{
+		ft_putchar(*str);
+		str++;
+	}
+}
