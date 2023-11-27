@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:45:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/27 18:12:54 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/11/27 21:42:54 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 int main (void)
 {
 	int a = 9;
-	int b = 1;
+	char c = 65;
+	char str[] = "House";
 
 	
-	ft_printf("\nlist %d new %d list\n", a, b);
+	ft_printf("\nlist %d new %c %s list\n", a, c, str);
 
 
 

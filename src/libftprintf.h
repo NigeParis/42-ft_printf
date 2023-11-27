@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:43:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/27 18:39:51 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/11/27 21:24:27 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@
 # include <stdio.h>
 
 int	ft_printf(const char *, ...);
-int ft_formatcheck(va_list input);
+int ft_formatcheck(va_list input, char c);
 
 #endif

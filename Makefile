@@ -23,7 +23,7 @@ OBJ_DIR=
 LIBFT_DIR=./libft/
 INCLUDE=./src/
 SRC=ft_printf.c ft_formatcheck.c
-LIBFT=ft_putchar_fd.c ft_putstr.c ft_putchar.c
+LIBFT=ft_putchar_fd.c ft_putstr.c ft_putchar.c ft_putstr_fd.c
 MAIN=test_printf.c
 
 
