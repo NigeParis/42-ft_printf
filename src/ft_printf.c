@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:45:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/27 18:00:51 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/11/27 18:39:11 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 
-			ft_putchar(va_arg(input,int)+'0');
+//			ft_putchar(va_arg(input,int)+'0');
 
-			//print_size += ft_formatcheck();
+			ft_formatcheck(input);
 			i++;
 		}
 		
