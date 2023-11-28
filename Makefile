@@ -22,8 +22,10 @@ SRC_DIR=./src/
 OBJ_DIR=
 LIBFT_DIR=./libft/
 INCLUDE=./src/
-SRC=ft_printf.c ft_formatcheck.c
-LIBFT=ft_putchar_fd.c ft_putstr.c ft_putchar.c ft_putstr_fd.c
+SRC=ft_printf.c ft_formatcheck.c ft_putnbrprintf_unsigned_fd.c
+SRC+=ft_putnbrprintf_fd.c ft_putstrprintf_fd.c ft_len_of_nbr.c
+LIBFT=ft_putchar_fd.c ft_putstr.c ft_putchar.c ft_putstr_fd.c ft_putnbr_fd.c
+LIBFT+=ft_strlen.c
 MAIN=test_printf.c
 
 
