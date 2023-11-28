@@ -1,44 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 07:45:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/28 20:54:39 by nrobinso         ###   ########.fr       */
+/*   Created: 2023/11/28 21:15:33 by nrobinso          #+#    #+#             */
+/*   Updated: 2023/11/28 21:17:36 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libfrprintf.h"
 
-int ft_printf(const char *str, ...)
+int	ft_print_hex()
 {
-	va_list input;
-	size_t	print_size;
-	size_t	i;
-	
-	i = 0;
-	print_size = 0;
-	if (!str)
-		return (-1);
-	va_start(input, str);
 
-	while (str[i])
-	{
-		if (str[i] == '%')
-		{
 
-			i++;
-			print_size += ft_formatcheck(input, str[i]);
-		}
-		else
-		{
-			print_size++;	
-			ft_putchar(str[i]);
-		}
-		i++;
-	}
-	va_end(input);
-	return (print_size);
+
+
 }
