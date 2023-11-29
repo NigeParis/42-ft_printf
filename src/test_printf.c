@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:45:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/29 12:56:28 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/11/29 15:40:24 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,8 +131,8 @@ int main (void)
 
 	printf("\n============= ptr pointer address  ============\n");
 
-	fsize = ft_printf("\nHex faux : %p\n", ptr);
-	vsize = printf("\nHex Vrai : %p\n", ptr);
+	fsize = ft_printf("faux %p\n", ptr);
+	vsize = printf("vrai %p\n", ptr);
 	printf("\nvrai_size = %d\n", vsize);
 	printf("\nfaux_size = %d\n", fsize);
 

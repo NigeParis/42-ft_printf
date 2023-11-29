@@ -6,41 +6,47 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 21:15:33 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/29 14:11:24 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/11/29 15:37:55 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libftprintf.h"
 
-static int	ft_putnbr_long_base(size_t nbr, char *base);
-static int	ft_check_base(char *base);
+static int		ft_putnbr_base(int flag, size_t nbr, char *base);
+static int		ft_check_base(char *base);
 static size_t	ft_baselen(char *str);
 
-int	ft_print_hex(size_t nbr, char *base)
+int	ft_print_hex(int flag, size_t nbr, char *base)
 {
 	int	nb_printed;
 
 	nb_printed = 0;
-	nb_printed = ft_putnbr_long_base((size_t)nbr, base);
+	if (flag == 2)
+	{
+		ft_putstr_fd("0x", 1);
+		nb_printed +=2;
+
+	}
+	nb_printed += ft_putnbr_base(flag, nbr, base);
 
 	return (nb_printed);
 }
 
-static int	ft_putnbr_long_base(size_t nbr, char *base)
+static int	ft_putnbr_base(int flag, size_t nbr, char *base)
 {
 	size_t	base_len;
 	size_t	nb;
 	int	nb_printed;
 
-	nb = (size_t)nbr;
+	nb = nbr;
 	nb_printed= 0;
 	if (ft_check_base(base))
 		return (0);
-	base_len =(size_t)ft_baselen(base);
+	base_len = ft_baselen(base);
 	if (base_len < 2)
 		return (0);
 	if (nb > base_len - 1)
 	{
-		nb_printed = ft_putnbr_long_base(nb / base_len, base);
+		nb_printed = ft_putnbr_base(flag, nb / base_len, base);
 	}
 	ft_putchar_fd(base[(nb % base_len)], 1);
 	nb_printed++;
@@ -86,4 +92,3 @@ static size_t	ft_baselen(char *str)
 		return (0);
 	return (count);
 }
-
