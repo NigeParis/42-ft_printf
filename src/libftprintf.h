@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:43:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/29 12:25:55 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/11/29 14:11:52 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int		ft_putnbrprintf_unsigned_fd(unsigned int nb, int fd);
 int		ft_putnbrprintf_fd(int nb, int fd);
 int		ft_putstrprintf_fd(char *s, int fd);
 int 	ft_len_of_nbr(unsigned int nb);
-int		ft_print_hex(int nbr, char *base);
+int		ft_print_hex(size_t nbr, char *base);
 
 #endif

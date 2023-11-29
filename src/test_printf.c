@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:45:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/29 12:36:31 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/11/29 12:56:28 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ int main (void)
 	unsigned int uz = 0;
 	char c = 65;
 	char str[] = "House";
+	char *ptr;
+
+	ptr = &c;
 	
 
 	printf("\n========== mixed variables  ============\n");
@@ -115,6 +118,25 @@ int main (void)
 
 
 	printf("\n================ hex x  ============\n");
+
+	printf("\n================ hex X Capitals  ============\n");
+
+	fsize = ft_printf("\nHex faux : %X\n", x);
+	vsize = printf("\nHex Vrai : %X\n", x);
+	printf("\nvrai_size = %d\n", vsize);
+	printf("\nfaux_size = %d\n", fsize);
+
+
+	printf("\n================ hex X  ============\n");
+
+	printf("\n============= ptr pointer address  ============\n");
+
+	fsize = ft_printf("\nHex faux : %p\n", ptr);
+	vsize = printf("\nHex Vrai : %p\n", ptr);
+	printf("\nvrai_size = %d\n", vsize);
+	printf("\nfaux_size = %d\n", fsize);
+
+	printf("\n============= ptr pointer address  ============\n");
 
 	return (0);
 }
