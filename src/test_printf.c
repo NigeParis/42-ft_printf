@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:45:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/29 11:53:31 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/11/29 12:36:31 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main (void)
 {
 	int a = -2147483648;
 	int b = 2147483647;
-	int x = 3000;
+	int x = 1234;
 	int vsize = 0;
 	int fsize = 0;
 	unsigned int u = 4294967295;

@@ -6,47 +6,36 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 21:15:33 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/29 12:05:25 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/11/29 12:39:34 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libftprintf.h"
 
-static int	ft_putnbr_long_base(int nbr, char *base);
+static int	ft_putnbr_long_base(unsigned int nbr, char *base);
 static int	ft_check_base(char *base);
 static int	ft_baselen(char *str);
 
 int	ft_print_hex(int nbr, char *base)
 {
-	int	nb;
-	int			nb_printed;
+	int	nb_printed;
 
 	nb_printed = 0;
-	nb = nbr;
-	nb_printed = ft_putnbr_long_base(nb, base);
+	nb_printed = ft_putnbr_long_base(nbr, base);
 
 	return (nb_printed);
 }
 
-static int	ft_putnbr_long_base(int nbr, char *base)
+static int	ft_putnbr_long_base(unsigned int nbr, char *base)
 {
-	int	base_len;
+	unsigned int	base_len;
 	int	nb_printed;
-	int	neg;
 
 	nb_printed= 0;
-	neg = 0;
-
 	if (ft_check_base(base))
 		return (0);
-	base_len = ft_baselen(base);
+	base_len =(unsigned int)ft_baselen(base);
 	if (base_len < 2)
 		return (0);
-	if (nbr < 0)
-	{
-		ft_putchar_fd('-', 1);
-		neg = 1;
-		nbr *= -1;
-	}
 	if (nbr > base_len - 1)
 	{
 		nb_printed = ft_putnbr_long_base(nbr / base_len, base);
@@ -54,7 +43,7 @@ static int	ft_putnbr_long_base(int nbr, char *base)
 	ft_putchar_fd(base[(nbr % base_len)], 1);
 	nb_printed++;
 
-	return (nb_printed + neg);
+	return (nb_printed);
 }
 
 static int	ft_check_base(char *base)
