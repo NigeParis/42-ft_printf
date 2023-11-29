@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 18:13:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/28 17:43:03 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/11/29 12:04:06 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int ft_formatcheck(va_list input, char c)
 
 	nb_printed = 0;
 
-	if (c == 'd')
+	if (c == 'd' || c == 'i')
 	{
 		nb_printed = ft_putnbrprintf_fd((va_arg(input, int)), 1);
 	}
@@ -35,6 +35,8 @@ int ft_formatcheck(va_list input, char c)
 	}
 	if (c == 'u')
 		nb_printed = ft_putnbrprintf_unsigned_fd((va_arg(input, unsigned int)), 1);
+	if (c == 'x')
+		nb_printed = ft_print_hex((va_arg(input, int)), "0123456789abcedf");
 	if (c == '%')
 	{
 		ft_putchar_fd('%', 1);

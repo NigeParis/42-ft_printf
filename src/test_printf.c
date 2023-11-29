@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:45:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/28 21:10:40 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/11/29 11:53:31 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int main (void)
 {
 	int a = -2147483648;
 	int b = 2147483647;
+	int x = 3000;
 	int vsize = 0;
 	int fsize = 0;
 	unsigned int u = 4294967295;
@@ -59,7 +60,7 @@ int main (void)
 
 
 	fsize = ft_printf(NULL);
-//	vsize = printf(NULL);
+	vsize = printf(NULL);
 	printf("\nvrai_size = %d", vsize);
 	printf("\nfaux_size = %d", fsize);
 
@@ -103,6 +104,17 @@ int main (void)
 
 	printf("\n========== empty string  ============\n");
 
+
+
+	printf("\n================ hex x  ============\n");
+
+	fsize = ft_printf("\nHex faux : %x\n", x);
+	vsize = printf("\nHex Vrai : %x\n", x);
+	printf("\nvrai_size = %d\n", vsize);
+	printf("\nfaux_size = %d\n", fsize);
+
+
+	printf("\n================ hex x  ============\n");
 
 	return (0);
 }
