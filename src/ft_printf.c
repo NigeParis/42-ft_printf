@@ -6,11 +6,11 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:45:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/29 15:33:41 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/11/30 09:16:28 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int ft_printf(const char *str, ...)
 {
@@ -21,7 +21,7 @@ int ft_printf(const char *str, ...)
 	i = 0;
 	print_size = 0;
 	if (!str)
-		return (-1);
+		return (0);
 	va_start(input, str);
 	while (str[i])
 	{

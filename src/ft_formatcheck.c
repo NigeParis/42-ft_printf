@@ -6,11 +6,11 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 18:13:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/29 15:22:16 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/11/30 22:31:39 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int ft_formatcheck(va_list input, char c)
 {
@@ -26,11 +26,11 @@ int ft_formatcheck(va_list input, char c)
 	if (c == 'u')
 		nb_put = ft_putnbrprintf_unsigned_fd((va_arg(input, unsigned int)), 1);
 	if (c == 'x')
-		nb_put = ft_print_hex(0,(va_arg(input, size_t)), "0123456789abcdef");
+		nb_put = ft_print_hex(0,(va_arg(input, int)), "0123456789abcdef");
 	if (c == 'X')
-		nb_put = ft_print_hex(0,(va_arg(input, size_t)), "0123456789ABCDEF");
+		nb_put = ft_print_hex(0,(va_arg(input, int)), "0123456789ABCDEF");
 	if (c == 'p')
-		nb_put = ft_print_hex(2,(va_arg(input, size_t)), "0123456789abcdef");
+		nb_put = ft_print_ptr(2,(va_arg(input, size_t)), "0123456789abcdef");
 	if (c == '%')
 		ft_putchar_fd('%', 1);
 	if (c == 'c' || c == '%')

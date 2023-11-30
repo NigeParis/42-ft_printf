@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:43:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/29 14:31:06 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/11/30 22:36:27 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIBFTPRINTF_H
-# define FT_LIBFTPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-# include "../libft/libft.h"
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdint.h>
 # include <stdarg.h>
 # include <stdio.h>
+
 # define MAX_UNSIGNED_INT 4294967295
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
 
 int		ft_printf(const char *, ...);
 int		ft_formatcheck(va_list input, char c);
@@ -24,6 +34,14 @@ int		ft_putnbrprintf_unsigned_fd(unsigned int nb, int fd);
 int		ft_putnbrprintf_fd(int nb, int fd);
 int		ft_putstrprintf_fd(char *s, int fd);
 int 	ft_len_of_nbr(unsigned int nb);
-int		ft_print_hex(int flag, size_t nbr, char *base);
+int		ft_print_hex(int flag, unsigned int nbr, char *base);
+int		ft_print_ptr(int flag, size_t nbr, char *base);
+int		ft_putchar(int c);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr(char *str);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+size_t	ft_strlen(const char *s);
+
 
 #endif

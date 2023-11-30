@@ -6,11 +6,12 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:45:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/29 15:40:24 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/11/30 22:28:17 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
+#include <limits.h>
 
 int main (void)
 {
@@ -60,13 +61,13 @@ int main (void)
 
 
 	printf("\n========== null string  ============\n");
-
+/*
 
 	fsize = ft_printf(NULL);
 	vsize = printf(NULL);
 	printf("\nvrai_size = %d", vsize);
 	printf("\nfaux_size = %d", fsize);
-
+*/
 	printf("\n========== null string  ============\n");
 
 
@@ -111,8 +112,8 @@ int main (void)
 
 	printf("\n================ hex x  ============\n");
 
-	fsize = ft_printf("\nHex faux : %x\n", x);
-	vsize = printf("\nHex Vrai : %x\n", x);
+	fsize = ft_printf("\nHex llx faux : %x\n", 9223372036854775807LL);
+//	vsize = printf("\nHex llx Vrai : %x\n", 9223372036854775807LL);
 	printf("\nvrai_size = %d\n", vsize);
 	printf("\nfaux_size = %d\n", fsize);
 

@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hex.c                                     :+:      :+:    :+:   */
+/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 21:15:33 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/30 22:26:39 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/11/30 22:34:18 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-static size_t		ft_putnbr_base(unsigned int  nbr, char *base);
+static size_t		ft_putnbr_base(size_t  nbr, char *base);
 static size_t		ft_check_base(char *base);
 static size_t	ft_baselen(char *str);
 
-int	ft_print_hex(int flag, unsigned int nbr, char *base)
+int	ft_print_ptr(int flag, size_t nbr, char *base)
 {
 	int	nb_printed;
 
@@ -31,7 +31,7 @@ int	ft_print_hex(int flag, unsigned int nbr, char *base)
 	return (nb_printed);
 }
 
-static size_t	ft_putnbr_base(unsigned int nbr, char *base)
+static size_t	ft_putnbr_base(size_t nbr, char *base)
 {
 	size_t base_len;
 	size_t nb;
