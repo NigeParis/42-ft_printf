@@ -9,9 +9,6 @@ OBJ=$(SRC:.c=.o)
 HEAD=$(addprefix $(INCLUDE), $(HEADER))
 CCOPTIONS=-c
 SRC_OBJ=$(addprefix $(OBJ_DIR), $(OBJ))
-LIBFT_SRC=$(addprefix $(LIBFT_DIR), $(LIBFT))
-LIBFT_OBJ=$(addprefix $(OBJ_DIR), $(LIBFT:.c=.o))
-LIBFT_HEAD=$(addprefix $(LIBFT_DIR), $(LIBFT_HEADER))
 MAIN_SRC=$(addprefix $(SRC_DIR), $(MAIN))
 MAIN_OBJ=$(addprefix $(OBJ_DIR), $(MAIN:.c=.o))
 CC=cc
@@ -20,19 +17,15 @@ CC=cc
 
 SRC_DIR=./src/
 OBJ_DIR=
-LIBFT_DIR=./libft/
 INCLUDE=./src/
 SRC=ft_printf.c ft_formatcheck.c ft_printf_unsigned_nbr.c
 SRC+=ft_printf_nbr.c ft_printf_str.c ft_len_of_nbr.c
 SRC+=ft_printf_hex.c ft_printf_ptr.c ft_printf_char.c
-LIBFT=#ft_putchar_fd.c ft_putstr.c ft_putchar.c ft_putstr_fd.c ft_putnbr_fd.c
-#LIBFT+=ft_strlen.c
 MAIN=test_printf.c
 
 
 
 HEADER=ft_printf.h
-LIBFT_HEADER=libft.h
 ###############################################################################
 ## RULES
 
@@ -43,16 +36,15 @@ $(NAME): $(OBJ)
 	@echo "\nCreating Libft.a FILE .......\n"
 	ar -rcs $(NAME) $(OBJ)
 	@echo "\nlinking FILES .......\n"
-	cc $(OBJ) $(LIBFT_OBJ) $(MAIN_OBJ) -o $(EXEC)
+	cc $(OBJ) $(MAIN_OBJ) -o $(EXEC)
 
 $(OBJ):
 	@echo "\nCOMPILE all c files to .o FILES .......\n"
-#	$(CC) $(CFLAGS) $(CCOPTIONS) $(LIBFT_SRC) -I$(LIBFT_HEAD)
-	$(CC) $(CFLAGS) $(CCOPTIONS) $(SRCS) -I$(HEAD) -I$(LIBFT_HEAD)
+	$(CC) $(CFLAGS) $(CCOPTIONS) $(SRCS) -I$(HEAD)
 	$(CC) $(CFLAGS) $(CCOPTIONS) $(MAIN_SRC) -o $(MAIN_OBJ)
 	
 clean:
-	rm -f $(SRC_OBJ) $(MAIN_OBJ) # $(LIBFT_OBJ)
+	rm -f $(SRC_OBJ) $(MAIN_OBJ) 
 
 fclean:clean
 	@echo "\nFCLEAN all .o et .a files .......\n"
@@ -61,4 +53,4 @@ fclean:clean
 re:fclean all
 	@echo "\nAll erased and re-compiled .......\n"
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
