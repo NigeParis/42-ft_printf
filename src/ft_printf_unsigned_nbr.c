@@ -6,25 +6,25 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:46:15 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/30 09:45:49 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/12/02 14:08:35 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 
-int	ft_putnbrprintf_unsigned_fd(unsigned int nb, int fd)
+int	ft_printf_unsigned_nbr(unsigned int nb)
 {
 	if (nb > 9)
 	{  
-		ft_putnbrprintf_unsigned_fd(nb /10, fd);
+		ft_printf_unsigned_nbr(nb /10);
 	}
 	if (nb == 0)
 	{	
-		ft_putnbr_fd(0, 1);
+		ft_printf_nbr(0);
 		return (1);
 	}
-	ft_putchar_fd(((nb % 10) + '0'), fd);
+	ft_printf_char(((nb % 10) + '0'));
 
 	return (ft_len_of_nbr(nb));
 }

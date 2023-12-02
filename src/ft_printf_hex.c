@@ -6,35 +6,35 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 21:15:33 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/30 22:26:39 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/12/02 14:19:22 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-static size_t		ft_putnbr_base(unsigned int  nbr, char *base);
-static size_t		ft_check_base(char *base);
+static size_t	ft_putnbr_base(unsigned int  nbr, char *base);
+static size_t	ft_check_base(char *base);
 static size_t	ft_baselen(char *str);
 
-int	ft_print_hex(int flag, unsigned int nbr, char *base)
+size_t	ft_printf_hex(int flag, unsigned int nbr, char *base)
 {
-	int	nb_printed;
+	size_t	nb_printed;
 
 	nb_printed = 0;
 	if (flag == 2)
 	{
-		ft_putstr_fd("0x", 1);
+		ft_printf_str("0x");
 		nb_printed +=2;
 
 	}
-	nb_printed += ft_putnbr_base(nbr, base);
+	nb_printed = ft_putnbr_base(nbr, base);
 
 	return (nb_printed);
 }
 
 static size_t	ft_putnbr_base(unsigned int nbr, char *base)
 {
-	size_t base_len;
-	size_t nb;
+	size_t	base_len;
+	size_t	nb;
 	size_t	nb_printed;
 
 	nb = nbr;
@@ -46,9 +46,9 @@ static size_t	ft_putnbr_base(unsigned int nbr, char *base)
 		return (0);
 	if (nb > base_len - 1)
 	{
-		nb_printed = ft_putnbr_base(nb / base_len, base);
+		nb_printed += ft_putnbr_base(nb / base_len, base);
 	}
-	ft_putchar_fd(base[(nb % base_len)], 1);
+	ft_printf_char(base[(nb % base_len)]);
 	nb_printed++;
 
 	return (nb_printed);

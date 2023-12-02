@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:45:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/30 22:28:17 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/12/02 14:44:37 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@ int main (void)
 	unsigned int u = 4294967295;
 	unsigned int uz = 0;
 	char c = 65;
-	char str[] = "House";
-	char *ptr;
+	char str[] = "";
+	char *ptr = NULL;
 
-	ptr = &c;
+//	ptr = &c;
 	
 
 	printf("\n========== mixed variables  ============\n");
 
 	fsize = ft_printf("\n%clist%d %%old  %u %s list%d\n",c, b, u, str, a);
-	vsize = printf("\n%clist%d %%new  %u %s list%d\n",c, b, u, str, a);
+	   vsize = printf("\n%clist%d %%new  %u %s list%d\n",c, b, u, str, a);
 	printf("\nvrai_size = %d", vsize);
 	printf("\nfaux_size = %d", fsize);
 
@@ -61,13 +61,13 @@ int main (void)
 
 
 	printf("\n========== null string  ============\n");
-/*
 
-	fsize = ft_printf(NULL);
-	vsize = printf(NULL);
+
+	fsize = ft_printf("%s",(char *)ptr);
+	vsize = printf("%s", (char *)ptr);
 	printf("\nvrai_size = %d", vsize);
 	printf("\nfaux_size = %d", fsize);
-*/
+
 	printf("\n========== null string  ============\n");
 
 
@@ -112,8 +112,8 @@ int main (void)
 
 	printf("\n================ hex x  ============\n");
 
-	fsize = ft_printf("\nHex llx faux : %x\n", 9223372036854775807LL);
-//	vsize = printf("\nHex llx Vrai : %x\n", 9223372036854775807LL);
+	fsize = ft_printf("\nHex llx faux : %x\n", 2047);
+	vsize = printf("\nHex llx Vrai : %x\n", 2047);
 	printf("\nvrai_size = %d\n", vsize);
 	printf("\nfaux_size = %d\n", fsize);
 
@@ -138,6 +138,21 @@ int main (void)
 	printf("\nfaux_size = %d\n", fsize);
 
 	printf("\n============= ptr pointer address  ============\n");
+
+	printf("\n============= NULL pointer address  ============\n");
+
+
+
+	fsize = ft_printf("faux %p\n", (void *)0);
+	vsize = printf("vrai %p\n", (void *)0);
+	printf("\nvrai_size = %d\n", vsize);
+	printf("\nfaux_size = %d\n", fsize);
+
+
+
+
+	printf("\n============= NULL pointer address  ============\n");
+
 
 	return (0);
 }

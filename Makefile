@@ -22,11 +22,11 @@ SRC_DIR=./src/
 OBJ_DIR=
 LIBFT_DIR=./libft/
 INCLUDE=./src/
-SRC=ft_printf.c ft_formatcheck.c ft_putnbrprintf_unsigned_fd.c
-SRC+=ft_putnbrprintf_fd.c ft_putstrprintf_fd.c ft_len_of_nbr.c
-SRC+=ft_print_hex.c ft_print_ptr.c
-LIBFT=ft_putchar_fd.c ft_putstr.c ft_putchar.c ft_putstr_fd.c ft_putnbr_fd.c
-LIBFT+=ft_strlen.c
+SRC=ft_printf.c ft_formatcheck.c ft_printf_unsigned_nbr.c
+SRC+=ft_printf_nbr.c ft_printf_str.c ft_len_of_nbr.c
+SRC+=ft_printf_hex.c ft_printf_ptr.c ft_printf_char.c
+LIBFT=#ft_putchar_fd.c ft_putstr.c ft_putchar.c ft_putstr_fd.c ft_putnbr_fd.c
+#LIBFT+=ft_strlen.c
 MAIN=test_printf.c
 
 
@@ -47,12 +47,12 @@ $(NAME): $(OBJ)
 
 $(OBJ):
 	@echo "\nCOMPILE all c files to .o FILES .......\n"
-	$(CC) $(CFLAGS) $(CCOPTIONS) $(LIBFT_SRC) -I$(LIBFT_HEAD)
+#	$(CC) $(CFLAGS) $(CCOPTIONS) $(LIBFT_SRC) -I$(LIBFT_HEAD)
 	$(CC) $(CFLAGS) $(CCOPTIONS) $(SRCS) -I$(HEAD) -I$(LIBFT_HEAD)
 	$(CC) $(CFLAGS) $(CCOPTIONS) $(MAIN_SRC) -o $(MAIN_OBJ)
 	
 clean:
-	rm -f $(SRC_OBJ) $(LIBFT_OBJ) $(MAIN_OBJ)
+	rm -f $(SRC_OBJ) $(MAIN_OBJ) # $(LIBFT_OBJ)
 
 fclean:clean
 	@echo "\nFCLEAN all .o et .a files .......\n"

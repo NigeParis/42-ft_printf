@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstrprintf_fd.c                               :+:      :+:    :+:   */
+/*   ft_printf_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:05:27 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/30 09:32:08 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/12/02 13:43:24 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstrprintf_fd(char *s, int fd)
+size_t	ft_printf_str(char *s)
 {
-	int count;
+	size_t count;
 
 	count = 0;
-	if ((!s) || (fd < 0))
+	if (!s)
 	{
-		ft_putstr("(null)");
-		return (6);
+		count = ft_printf_str("(null)");
+		return (count);
 	}
 	while (*s)
 	{
-		ft_putchar_fd(*s, fd);
+		count += ft_printf_char(*s);
 		s++;
-		count ++;
 	}
 	return(count);
 }

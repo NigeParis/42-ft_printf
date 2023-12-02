@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf_nbr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 07:45:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/12/02 14:49:11 by nrobinso         ###   ########.fr       */
+/*   Created: 2023/11/19 16:04:04 by nrobinso          #+#    #+#             */
+/*   Updated: 2023/12/02 14:31:33 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf(const char *str, ...)
+int	ft_printf_nbr(int n)
 {
-	va_list input;
-	size_t	print_size;
-	size_t	i;
-	
-	i = 0;
-	print_size = 0;
-	if (!str)
-		return (0);
-	va_start(input, str);
-	while (str[i])
+	int count;
+	int neg;
+
+	neg = 0;
+	count = 0;
+	if (n == -2147483648)
 	{
-		if (str[i] == '%')
-		{
-			i++;
-			print_size += ft_formatcheck(input, str[i]);
-		}
-		else
-		{
-			print_size++;	
-			ft_printf_char(str[i]);
-		}
-		i++;
+		ft_printf_str("-2147483648");
+		return (11);
 	}
-	va_end(input);
-	return (print_size);
+	if (n < 0)
+	{
+		ft_printf_char('-');
+		neg = 1;
+		n = n * -1;
+	}
+	if (n > 9)
+	{
+		ft_printf_nbr(n / 10);
+	}
+	ft_printf_char((n % 10) + '0');
+	count = ft_len_of_nbr(n);
+	return (count + neg);
 }

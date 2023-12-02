@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:43:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/30 22:36:27 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/12/02 14:18:42 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ typedef struct s_list
 
 int		ft_printf(const char *, ...);
 int		ft_formatcheck(va_list input, char c);
-int		ft_putnbrprintf_unsigned_fd(unsigned int nb, int fd);
-int		ft_putnbrprintf_fd(int nb, int fd);
-int		ft_putstrprintf_fd(char *s, int fd);
+int		ft_printf_unsigned_nbr(unsigned int nb);
+int		ft_printf_nbr(int nb);
+size_t	ft_printf_str(char *s);
 int 	ft_len_of_nbr(unsigned int nb);
-int		ft_print_hex(int flag, unsigned int nbr, char *base);
-int		ft_print_ptr(int flag, size_t nbr, char *base);
+size_t	ft_printf_hex(int flag, unsigned int nbr, char *base);
+size_t	ft_printf_ptr(int flag, size_t nbr, char *base);
 int		ft_putchar(int c);
-void	ft_putchar_fd(char c, int fd);
+size_t	ft_printf_char(char c);
 void	ft_putstr(char *str);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
