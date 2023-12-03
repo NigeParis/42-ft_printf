@@ -6,22 +6,23 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:45:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/12/02 14:49:11 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/12/02 19:37:18 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int ft_printf(const char *str, ...)
 {
 	va_list input;
-	size_t	print_size;
+	int	print_size;
 	size_t	i;
 	
 	i = 0;
 	print_size = 0;
 	if (!str)
-		return (0);
+		return (-1);
 	va_start(input, str);
 	while (str[i])
 	{

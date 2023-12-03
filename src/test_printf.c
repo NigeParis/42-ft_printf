@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:45:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/12/02 15:39:05 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/12/03 11:17:05 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int main (void)
 	
 	printf("\n========== no variables just a string  ============\n");
 
-	fsize = ft_printf("\n\f123456789\n");
-	vsize = printf("\n\f123456789\n");
+	fsize = ft_printf("\n\f123456789 ");
+	vsize = printf("\n\f123456789%% ");
 	printf("\nvrai_size = %d\n", vsize);
 	printf("\nfaux_size = %d\n", fsize);
 
@@ -64,8 +64,8 @@ int main (void)
 	printf("\n========== null string  ============\n");
 
 
-	fsize = ft_printf("%s",(char *)ptr);
-	vsize = printf("%s", (char *)ptr);
+	fsize = ft_printf("%s%d",(char *)str, 0);
+	vsize = printf("%s%d",(char *)str, 0);
 	printf("\nvrai_size = %d", vsize);
 	printf("\nfaux_size = %d", fsize);
 
@@ -102,8 +102,8 @@ int main (void)
 
 	printf("\n========== empty  string  ============\n");
 
-	fsize = ft_printf("\nfaux : %s\n","");
-	vsize = printf("\nVrai : %s\n","");
+	fsize = ft_printf("%s",(char *)0);
+	vsize = printf("%s",(char *)0);
 	printf("\nvrai_size = %d\n", vsize);
 	printf("\nfaux_size = %d\n", fsize);
 
