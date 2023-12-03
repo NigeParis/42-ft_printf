@@ -6,15 +6,15 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 18:13:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/12/02 19:41:59 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/12/03 18:11:23 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_formatcheck(va_list input, char c)
+int	ft_formatcheck(va_list input, char c)
 {
-	size_t nb_put;
+	size_t	nb_put;
 
 	nb_put = 0;
 	if (c == 'd' || c == 'i')
@@ -26,14 +26,14 @@ int ft_formatcheck(va_list input, char c)
 	else if (c == 'u')
 		nb_put = ft_printf_unsigned_nbr((va_arg(input, unsigned int)));
 	else if (c == 'x')
-		nb_put = ft_printf_hex(0,(va_arg(input, int)), "0123456789abcdef");
+		nb_put = ft_printf_hex(0, (va_arg(input, int)), "0123456789abcdef");
 	else if (c == 'X')
-		nb_put = ft_printf_hex(0,(va_arg(input, int)), "0123456789ABCDEF");
+		nb_put = ft_printf_hex(0, (va_arg(input, int)), "0123456789ABCDEF");
 	else if (c == 'p')
-		nb_put = ft_printf_ptr(2,(va_arg(input, size_t)), "0123456789abcdef");
+		nb_put = ft_printf_ptr(2, (va_arg(input, size_t)), "0123456789abcdef");
 	else if (c == '%')
 		nb_put = ft_printf_char('%');
 	else
-		 return (0);
+		return (0);
 	return (nb_put);
 }

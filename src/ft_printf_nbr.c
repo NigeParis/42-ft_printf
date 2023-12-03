@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:04:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/12/02 14:31:33 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/12/03 18:40:15 by nige42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_printf_nbr(int n)
 {
-	int count;
-	int neg;
+	int	count;
+	int	neg;
 
 	neg = 0;
 	count = 0;
