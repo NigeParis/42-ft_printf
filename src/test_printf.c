@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:45:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/12/03 11:17:05 by nrobinso         ###   ########.fr       */
+/*   Updated: 2023/12/04 07:37:24 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int main (void)
 	char str[] = "";
 	char *ptr = NULL;
 
-//	ptr = &c;
 	
 
 	printf("\n========== mixed variables  ============\n");
@@ -54,7 +53,7 @@ int main (void)
 	printf("\n========== no variables just a string  ============\n");
 
 	fsize = ft_printf("\n\f123456789 ");
-	vsize = printf("\n\f123456789%% ");
+	vsize = printf("\n\f123456789 ");
 	printf("\nvrai_size = %d\n", vsize);
 	printf("\nfaux_size = %d\n", fsize);
 
@@ -64,8 +63,8 @@ int main (void)
 	printf("\n========== null string  ============\n");
 
 
-	fsize = ft_printf("%s%d",(char *)str, 0);
-	vsize = printf("%s%d",(char *)str, 0);
+	fsize = ft_printf("%s",(char *)str);
+	vsize = printf("%s",(char *)str);
 	printf("\nvrai_size = %d", vsize);
 	printf("\nfaux_size = %d", fsize);
 
@@ -74,8 +73,8 @@ int main (void)
 
 	printf("\n========== max %%%% string  ============\n");
 
-	   printf("\n%%%%%%%%%%%%%%%%%d",c);
-	ft_printf("\n%%%%%%%%%%%%%%%%%d",c);
+	   printf("\n%%%%%%%%%%%%%%%%%d\n",c);
+	ft_printf("\n%%%%%%%%%%%%%%%%%d\n",c);
 
 	printf("\n========== max %%%% string  ============\n");
 
@@ -131,28 +130,28 @@ int main (void)
 
 	printf("\n================ hex X  ============\n");
 
-	printf("\n============= ptr pointer address  ============\n");
-
-	fsize = ft_printf("faux %p\n", ptr);
-	vsize = printf("vrai %p\n", ptr);
-	printf("\nvrai_size = %d\n", vsize);
-	printf("\nfaux_size = %d\n", fsize);
-
-	printf("\n============= ptr pointer address  ============\n");
-
 	printf("\n============= NULL pointer address  ============\n");
-
-
 
 	fsize = ft_printf("faux %p\n", (void *)0);
 	vsize = printf("vrai %p\n", (void *)0);
 	printf("\nvrai_size = %d\n", vsize);
 	printf("\nfaux_size = %d\n", fsize);
 
-
-
-
 	printf("\n============= NULL pointer address  ============\n");
+
+	printf("\n============= pointer address  ============\n");
+
+
+
+	ptr = &c;
+	fsize = ft_printf("faux %p\n", ptr);
+	vsize = printf("vrai %p\n", ptr);
+	printf("\nvrai_size = %d\n", vsize);
+	printf("\nfaux_size = %d\n", fsize);
+
+	printf("\n============= pointer address  ============\n");
+
+
 
 
 	return (0);
