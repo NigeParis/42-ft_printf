@@ -22,3 +22,4 @@ You have to implement the following conversions:
 • %x Prints a number in hexadecimal (base 16) lowercase format.
 • %X Prints a number in hexadecimal (base 16) uppercase format.
 • %% Prints a percent sign.
+
