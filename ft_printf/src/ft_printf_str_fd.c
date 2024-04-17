@@ -1,43 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf_str_fd.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 07:45:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/17 00:03:52 by nrobinso         ###   ########.fr       */
+/*   Created: 2023/11/19 16:05:27 by nrobinso          #+#    #+#             */
+/*   Updated: 2024/04/06 12:35:53 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-int	ft_printf(const char *str, ...)
+size_t	ft_printf_str_fd(int fd, char *s)
 {
-	va_list	input;
-	int		print_size;
-	size_t	i;
+	size_t	count;
 
-	i = 0;
-	print_size = 0;
-	if (!str)
-		return (-1);
-	va_start(input, str);
-	while (str[i])
+	count = 0;
+	if (!s)
 	{
-		if (str[i] == '%')
-		{
-			i++;
-			print_size += ft_formatcheck(&input, str[i]);
-		}
-		else
-		{
-			print_size++;
-			ft_printf_char(str[i]);
-		}
-		i++;
+		write(fd, "", 1);
+		return (count);
 	}
-	va_end(input);
-	return (print_size);
+	else
+	{
+		count = ft_printf_strlen(s);
+		write(fd, s, count);
+	}
+	return (count);
 }
